@@ -1,7 +1,7 @@
 async function refreshToken() {
     let refreshToken = localStorage.getItem('refresh_token');
     try{
-        let response = await fetch(`http://localhost:8000/api/auth/token/refresh`, {
+        let response = await fetch(`https://localhost:8000/api/auth/token/refresh`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
