@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* Substitute with the path to your selected background image */
+    background-image: url('images/fitnessapp.webp');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity for better readability */
+}
+
+.dashboard-container {
+    text-align: center;
+    color: white;
+}
+
+.btn-custom {
+    background-color: green; /* Green color that matches the theme */
+    border-color: green;
+    color: white;
+    margin: 10px;
+}
+
+.btn-custom:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+    color: white;
+}

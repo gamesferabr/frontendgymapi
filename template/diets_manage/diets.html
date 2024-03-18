@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diets</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/style_diets.css">
+    <link rel="shortcut icon" href="../../static/css/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="bg">
+    <div class="overlay">
+        <h1>Add your diet here !</h1>
+        <a href="../dashboard.html" class="btn btn-custom btn-back">Back to home page</a>
+        <div class="content-container">
+            
+            <!-- Botões de controle -->
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon custom-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon custom-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+            <!-- Carousel -->
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"data-interval="false">
+                <div class="carousel-inner">
+                    <!-- Breakfast -->
+                    <div class="carousel-item active" id ="breakfastcontainer">
+                        <div class="meal-container" data-meal="breakfast">
+                            
+                            <h3 class="breakfast">Breakfast</h3>
+                            <input type="text" class="inputsearch" id="searchinput-breakfast" placeholder="search your food">
+                            
+                            <button class="add-food-btn" data-meal="breakfast">+</button>
+                            <div class="food-results" id="food-results-breakfast"></div>
+                            
+                            <button class="addSelectedFoods">Add Foods</button>
+                            
+                            <button class="button-style" id="btn-reset-view">Reset View</button>
+
+                            <a class="button-style" href="breakfastpreview.html" role="button" id="breakfastviewdiet">View Diet</a>
+
+                        </div>
+                    </div>
+
+                    <!-- Lunch -->
+                    <div class="carousel-item" id="lunchcontainer">
+                        <div class="meal-container">
+                            
+                            <h3 class="lunch">Lunch</h3>
+                            
+                            <input type="text" class="inputsearch" id="searchinput-lunch" placeholder="search your food">
+                           
+                            <button class="add-food-btn" data-meal="lunch">+</button>
+                            <div class="food-results" id="food-results-lunch"></div>
+
+                            <!-- Detalhes do almoço serão inseridos aqui -->
+                            <button class="addSelectedFoods">Add Foods</button>
+
+                            <button class="button-style" id="btn-reset-view">Reset View</button>
+
+                            <a class="button-style" href="lunchpreview.html" id="lunchpreviewdiet" role="button" id="lunchviewdiet">View Diet</a>
+                        </div>
+                    </div>
+
+                    <!-- Dinner -->
+                    <div class="carousel-item" id="dinnercontainer">
+                        <div class="meal-container">
+                            
+                            <h3 class="dinner">Dinner</h3>
+                            
+                            <input type="text" class="inputsearch" id="searchinput-dinner" placeholder="search your food">
+                            
+                            <button class="add-food-btn" data-meal="dinner">+</button>
+                            <div class="food-results" id="food-results-dinner"></div>
+
+                            <!-- Detalhes do jantar serão inseridos aqui -->
+                            <button class="addSelectedFoods">Add Foods</button>
+                            
+                            <button class="button-style" id="btn-reset-view">Reset View</button>
+
+                            <a class="button-style" href="dinnerpreview.html" id="dinnerpreviewdiet">View Diet</a>
+                        </div>
+                    </div>
+
+                    <!-- Snacks/Others -->
+                    <div class="carousel-item" id="snackscontainer">
+                        <div class="meal-container">
+                            
+                            <h3 class="snacks">Snacks</h3>
+
+                            <input type="text" class="inputsearch" id="searchinput-snacks" placeholder="search your food">
+                            
+                            <button class="add-food-btn" data-meal="snacks">+</button>
+                            <div class="food-results" id="food-results-snacks"></div>
+                            
+                            <!-- Detalhes de lanches/outros serão inseridos aqui -->
+                            <button class="addSelectedFoods">Add Foods</button>
+
+                            <button class="button-style" id="btn-reset-view">Reset View</button>
+
+                            <a class="button-style" href="snackspreview.html" id="snackspreviewdiet">View Diet</a>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependency (jQuery & Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../../static/js/diets_script.js"></script>
+<script type= "module" src ="../static/js/dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+</body>
+</html>

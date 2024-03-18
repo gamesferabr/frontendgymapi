@@ -1,0 +1,74 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    background-image: url('images/image.webp');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.signup-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+    background-color: green; /* Similar green color as before */
+    border-color: green;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+    color:white;
+}
+
+.btn-back, .btn-login {
+    background-color: green; /* Similar green color as before */
+    color: white;
+    border-color: green;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.btn-back:hover, .btn-login:hover {
+    background-color: darkgreen; /* Cor de fundo mais escura ao passar o mouse */
+    border-color: darkgreen;
+    color: white;
+}
+
+.btn-action {
+    background-color: green; /* Cor de fundo verde, similar aos outros botões de ação */
+    color: white; /* Cor do texto branco */
+    border-color: green;
+}
+
+.btn-action:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+    color: white;
+}
+
+.return{
+    display: flex;
+    justify-content: space-between;
+}

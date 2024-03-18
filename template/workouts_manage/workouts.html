@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Workouts</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/style_workouts.css">
+    <link rel="shortcut icon" href="../../static/css/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="bg">
+    <div class="overlay">
+        <!-- Container for dynamically loaded workouts -->
+        <div class="content-container workouts-container">
+            <h2 class="text-center">Your Workouts</h2>
+            <!-- Workouts will be inserted here by the script -->
+        </div>
+
+        <!-- Form to add a new workout -->
+        <div class="content-container">
+            <h2 class="text-center">Add New Workout</h2>
+            <form id="addWorkoutForm">
+                <div class="form-group">
+                    <label for="name">Workout Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description (Optional)</label>
+                    <textarea class="form-control" id="description" name="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">Add Workout</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependency (jQuery & Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../../static/script3.js"></script> <!-- Adjust the src to point to your JavaScript file -->
+</body>
+</html>

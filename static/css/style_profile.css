@@ -1,0 +1,80 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    background-image: url('images/fitnessapp.webp'); /* Adjust as necessary */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.profile-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.btn-custom {
+    background-color: green; /* Green color that matches the theme */
+    border-color: green;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+}
+.profile-info, .edit-profile-form {
+    display: block; /* Initially hide the edit form */
+
+}
+
+h2{
+    margin-bottom: 30px;
+}
+
+.btn-back {
+    margin-bottom: 20px; /* Espaço abaixo do botão */
+    transition: background-color 0.3s ease; /* Suaviza a mudança de cor ao passar o mouse */
+    color: white;
+    background-color: green;
+    border: none;
+}
+
+
+.button-style {
+    display: inline-block; /* Permite o uso de margin e padding */
+    padding: 8px 15px; /* Ajuste conforme necessário para o tamanho */
+    font-size: 14px; /* Ajuste conforme necessário para o tamanho do texto */
+    color: white; /* Cor do texto */
+    background-color: green;
+    border: 1px solid green; /* Cor da borda */
+    border-radius: 0.25rem; /* Arredondamento da borda */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    cursor: pointer; /* Muda o cursor para indicar clicabilidade */
+}
+
+.button-style:hover, .button-style:focus {
+    background-color: darkgreen; /* Cor de fundo ao passar o mouse e focar */
+    border-color: darkgreen; /* Cor da borda ao passar o mouse e focar */
+    text-align: none;
+    text-decoration: none;
+    color: white;
+}

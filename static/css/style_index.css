@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* Use the uploaded background image */
+    background-image: url('images/image.webp');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.btn-custom {
+    margin: 10px;
+    background-color: green; /* Similar green color as before */
+    border-color: green;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+    color: white;
+}
+
+.dashboard-container {
+    text-align: center;
+    color: white;
+}

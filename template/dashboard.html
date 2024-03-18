@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style_dashboard.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../static/css/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="bg">
+    <div class="overlay">
+        <div class="dashboard-container">
+            <h1>Welcome to Your Fitness Dashboard<span id="username"></span></h1>
+            <p>Here you can manage your diets, workouts, and profile.</p>
+            <div>
+                <a href="../template/diets_manage/diets.html" class="btn btn-custom">Manage Diets</a>
+                <!-- <a href="../template/workouts_manage/workouts.html" class="btn btn-custom">Manage Workouts</a> -->
+                <a href="../template/user_manager/profile.html" class="btn btn-custom">View Profile</a>
+                <!-- Botão de Logout -->
+                <form id="logoutForm">
+                    <button  type="submit" class="btn btn-custom" id="logoutButton">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependency (jQuery & Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+<script src="../static/js/dashboard.js"></script>
+</body>
+</html>

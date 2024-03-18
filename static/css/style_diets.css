@@ -1,0 +1,234 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    background-image: url('images/fitnessapp.webp');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    color: white;
+    margin-bottom: 30px;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensure content is vertically centered */
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    padding: 20px; /* Add some padding */
+}
+
+.text-center{
+    color: white;
+}
+
+.btn-custom {
+    background-color: #86bb71; /* Green color that matches the theme */
+    border-color: #86bb71;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #729c5f;
+    border-color: #729c5f;
+}
+
+.meal-container {
+    background-color: #f8f9fa; /* Cor de fundo clara para diferenciar as seções */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-summary {
+    background-color: #fff3cd; /* Cor de fundo amarelo claro para destaque */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meal-container h3, .nutrition-summary h3 {
+    color: #333; /* Cor escura para o texto dos títulos */
+    margin-bottom: 10px;
+}
+
+.nutrition-summary p {
+    margin: 5px 0; /* Espaçamento vertical para os parágrafos */
+}
+
+.inputsearch {
+    display: flex; /* Oculta os campos de pesquisa inicialmente */
+    transition: display 0.5s ease; /* Adiciona uma transição suave para o display */
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.food-results {
+    display: none;
+    max-height: 200px; /* Altura máxima antes de começar a rolar */
+    overflow-y: auto; /* Permite rolagem vertical se o conteúdo exceder a altura máxima */
+    border: 1px solid #ccc; /* Apenas para visualização, pode ser ajustado conforme o design */
+    margin-bottom: 10px; /* Espaço abaixo do contêiner para separá-lo dos elementos seguintes */
+    padding: 5px; /* Espaçamento interno para não colar o conteúdo nas bordas */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Espaço abaixo dos botões */
+}
+
+/* Adicionando CSS personalizado para mudar a cor dos botões do carrossel para verde */
+.carousel-control-prev-icon:after,
+.carousel-control-next-icon:after {
+    display: inline-block;
+    width: 20px; /* Largura do novo ícone/forma */
+    height: 20px; /* Altura do novo ícone/forma */
+    background-color: green; /* Cor do ícone/forma */
+    border-radius: 50%; /* Faz o ícone/forma redondo */
+}
+
+/* Reduzindo o tamanho e ajustando a posição dos botões de controle do carrossel */
+.carousel-control-prev, .carousel-control-next {
+    width: 40px; /* Ajuste a largura conforme necessário */
+    height: 40px; /* Ajuste a altura conforme necessário */
+    margin: auto 0; /* Centraliza verticalmente */
+}
+
+/* Ajustando o ícone dentro do botão para garantir que esteja centralizado */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 20px; /* Ajuste conforme necessário */
+    height: 20px; /* Ajuste conforme necessário */
+    background-size: 20px; /* Garante que o ícone do background tenha o tamanho correto */
+}
+
+.custom-icon {
+    filter: invert(48%) sepia(95%) saturate(1352%) hue-rotate(80deg) brightness(119%) contrast(119%); /* Ajuste a cor verde conforme necessário */
+}
+
+.addSelectedFoods{
+    display: none;
+    padding: 8px 15px; /* Ajuste conforme necessário para o tamanho */
+    font-size: 14px; /* Ajuste conforme necessário para o tamanho do texto */
+    color: white; /* Cor do texto */
+    background-color: green;
+    border: 1px solid green; /* Cor da borda */
+    border-radius: 0.25rem; /* Arredondamento da borda */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    cursor: pointer; /* Muda o cursor para indicar clicabilidade */
+    margin-bottom: 30px;
+}
+
+.addSelectedFoods:hover{
+    background-color: darkgreen; /* Cor de fundo ao passar o mouse e focar */
+    border-color: darkgreen; /* Cor da borda ao passar o mouse e focar */
+    text-align: none;
+    text-decoration: none;
+    color: white;
+}
+
+.button-style, .add-food-btn {
+    display: inline-block; /* Permite o uso de margin e padding */
+    padding: 8px 15px; /* Ajuste conforme necessário para o tamanho */
+    font-size: 14px; /* Ajuste conforme necessário para o tamanho do texto */
+    color: white; /* Cor do texto */
+    background-color: green;
+    border: 1px solid green; /* Cor da borda */
+    border-radius: 0.25rem; /* Arredondamento da borda */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    cursor: pointer; /* Muda o cursor para indicar clicabilidade */
+}
+.add-food-btn{
+    margin-bottom: 10px;
+    border-style: none;
+}
+
+.button-style:hover, .button-style:focus, .add-food-btn:hover {
+    background-color: darkgreen; /* Cor de fundo ao passar o mouse e focar */
+    border-color: darkgreen; /* Cor da borda ao passar o mouse e focar */
+    text-align: none;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-back {
+    margin-bottom: 20px; /* Espaço abaixo do botão */
+    transition: background-color 0.3s ease; /* Suaviza a mudança de cor ao passar o mouse */
+    color: white;
+    background-color: green;
+    border: none;
+}
+
+.btn-back:hover {
+    background-color: darkgreen; /* Muda a cor ao passar o mouse */
+    color: white;
+}
+
+.food-list{
+    max-height: 300px; /* Altura máxima antes de começar a rolar */
+    max-width: 600px;
+    overflow-y: auto; /* Permite rolagem vertical se o conteúdo exceder a altura máxima */
+    border: 1px solid #ccc; /* Apenas para visualização, pode ser ajustado conforme o design */
+    margin-bottom: 10px; /* Espaço abaixo do contêiner para separá-lo dos elementos seguintes */
+    margin-top: 10px;
+    padding: 5px; /* Espaçamento interno para não colar o conteúdo nas bordas */
+}
+
+.breakfastuser{
+    color: #333; /* Cor escura para o texto dos títulos */
+    margin-bottom: 10px;
+}
+
+.delete-food-btn {
+    display: inline-block; /* Permite o uso de margin e padding */
+    padding: 8px 15px; /* Ajuste conforme necessário para o tamanho */
+    font-size: 14px; /* Ajuste conforme necessário para o tamanho do texto */
+    color: white; /* Cor do texto */
+    background-color: red;
+    border: 1px solid red; /* Cor da borda */
+    border-radius: 0.25rem; /* Arredondamento da borda */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    cursor: pointer; /* Muda o cursor para indicar clicabilidade */
+    margin-bottom: 20px;
+    margin-left: 3px;
+}
+
+.delete-food-btn:hover {
+    background-color: darkred; /* Cor de fundo ao passar o mouse e focar */
+    border-color: darkred; /* Cor da borda ao passar o mouse e focar */
+    text-align: none;
+    text-decoration: none;
+    color: white;
+}
+
+.food-profile-breakfast, .food-profile-lunch, .food-profile-dinner, .food-profile-snacks{
+    border: 1px solid #ccc; /* Apenas para visualização, pode ser ajustado conforme o design */
+    margin-bottom: 10px; /* Espaço abaixo do contêiner para separá-lo dos elementos seguintes */
+    padding: 5px; /* Espaçamento interno para não colar o conteúdo nas bordas */
+    border-radius: 0.25rem; /* Arredondamento da borda */
+    background-color: #dadada; /* Cor de fundo clara para diferenciar as seções */
+}
