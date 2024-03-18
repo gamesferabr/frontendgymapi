@@ -51,7 +51,7 @@ async function login(){
         password: password
     };
 
-    let response = await fetch('https://localhost:8000/api/users/login', {
+    let response = await fetch('https://127.0.0.1:8000/api/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
