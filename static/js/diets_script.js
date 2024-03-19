@@ -12,7 +12,7 @@ document.querySelectorAll('.inputsearch').forEach(input => {
 async function refreshToken() {
     let refreshToken = localStorage.getItem('refresh_token');
     try{
-        let response = await fetch(`http://localhost:8000/api/auth/token/refresh`, {
+        let response = await fetch(`https://gym-api-930w.onrender.com/api/auth/token/refresh`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 async function validateToken(token) {
     try {
         
-        let response = await fetch(`http://localhost:8000/api/users/dashboard/${token}`, {
+        let response = await fetch(`https://gym-api-930w.onrender.com/api/users/dashboard/${token}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -263,7 +263,7 @@ $(document).ready(function() {
                     
                         console.log(accessToken);
 
-                        let response = await fetch(`http://localhost:8000/api/diets/add/${accessToken}`, {
+                        let response = await fetch(`https://gym-api-930w.onrender.com/api/diets/add/${accessToken}`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

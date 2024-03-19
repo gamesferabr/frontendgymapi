@@ -1,7 +1,7 @@
 async function refreshToken() {
     let refreshToken = localStorage.getItem('refresh_token');
     try{
-        let response = await fetch(`http://localhost:8000/api/auth/token/refresh`, {
+        let response = await fetch(`https://gym-api-930w.onrender.com/api/auth/token/refresh`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function validateToken(token) {
     try {
         
-        let response = await fetch(`http://localhost:8000/api/users/dashboard/${token}`, {
+        let response = await fetch(`https://gym-api-930w.onrender.com/api/users/dashboard/${token}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ document.getElementById("logoutForm").addEventListener('submit', async function(
 
     let token = localStorage.getItem('access_token');
         
-    let response = await fetch(`http://localhost:8000/api/users/logout/${token}`, {
+    let response = await fetch(`https://gym-api-930w.onrender.com/api/users/logout/${token}`, {
         method: 'POST',
         
         headers: {
