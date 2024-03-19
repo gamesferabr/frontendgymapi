@@ -51,10 +51,11 @@ async function login(){
         password: password
     };
 
-    let response = await fetch('https://gym-api-930w.onrender.com/api/users/login/', {
+    let response = await fetch('https://gym-api-930w.onrender.com/api/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                 'Accept': 'application/json'
             },
             body: JSON.stringify(userData),
         });
