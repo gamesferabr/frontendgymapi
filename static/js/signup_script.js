@@ -38,7 +38,7 @@ async function signup() {
         last_name: lastName,
     };
 
-    let response = await fetch('https://localhost:8000/api/users/users', {
+    let response = await fetch('http://localhost:8000/api/users/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
