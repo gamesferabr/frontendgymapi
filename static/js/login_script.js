@@ -54,7 +54,6 @@ async function login(){
     let response = await fetch('https://gym-api-930w.onrender.com/api/users/login', {
             method: 'POST',
             headers: {
-                accept: 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(userData),
