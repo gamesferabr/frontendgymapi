@@ -1,7 +1,7 @@
 async function refreshToken() {
     let refreshToken = localStorage.getItem('refresh_token');
     try{
-        let response = await fetch(`http://localhost:8000/api/auth/token/refresh`, {
+        let response = await fetch(`https://gym-api-930w.onrender.com/api/auth/token/refresh`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let currentmeal = "dinner";
     
-    let response = await fetch(`http://localhost:8000/api/diets/${data}/${currentmeal}/${accessToken}`, {
+    let response = await fetch(`https://gym-api-930w.onrender.com/api/diets/${data}/${currentmeal}/${accessToken}`, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + accessToken
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function validateToken(token) {
     try {
         
-        let response = await fetch(`http://localhost:8000/api/users/dashboard/${token}`, {
+        let response = await fetch(`https://gym-api-930w.onrender.com/api/users/dashboard/${token}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ async function deleteFood(foodId) {
     console.log(`Deleting food with ID: ${foodId}`);
     let accessToken = localStorage.getItem('access_token');
     
-    let response = await fetch(`http://localhost:8000/api/diets/delete/${foodId}/${accessToken}`, {
+    let response = await fetch(`https://gym-api-930w.onrender.com/api/diets/delete/${foodId}/${accessToken}`, {
         method: 'DELETE',
         headers: {
             'Authorization': 'Bearer ' + accessToken
@@ -216,7 +216,7 @@ document.getElementById("btn-date").addEventListener('click', async function(eve
 
         let currentmeal = "dinner";
         
-        let response = await fetch(`http://localhost:8000/api/diets/${date}/${currentmeal}/${accessToken}`, {
+        let response = await fetch(`https://gym-api-930w.onrender.com/api/diets/${date}/${currentmeal}/${accessToken}`, {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + accessToken
