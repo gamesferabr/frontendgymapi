@@ -54,14 +54,12 @@ async function login(){
     let response = await fetch('https://gym-api-930w.onrender.com/api/users/login', {
             method: 'POST',
             headers: {
+                accept: 'application/json',
                 'Content-Type': 'application/json',
-                 'Accept': 'application/json'
             },
             body: JSON.stringify(userData),
         });
-    
-    console.log(response);
-    
+
     let data = await response.json(); // Converte a resposta para JSON
 
     return { ok: response.ok, status: response.status, data: data };
