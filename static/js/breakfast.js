@@ -1,6 +1,14 @@
-// Pegar os valores do id do alimento h4
-const currentmeal = document.getElementById('currentmeal').textContent;
-console.log(currentmeal);
+// Pegar o texto do id do h4 e colocar na variável currentmeal
+// Seleciona o primeiro h4 da página
+const firstH4Element = document.querySelector('h4');
+
+// Extrai o texto do h4
+const firstH4Text = firstH4Element.textContent || firstH4Element.innerText;
+
+// Divide o texto pelo espaço e pega a primeira palavra
+const currentmeal = firstH4Text.split(' ')[0].toLowerCase();
+
+console.log(currentmeal); // Exibe a primeira palavra no console
 
 async function refreshToken() {
     let refreshToken = localStorage.getItem('refresh_token');
@@ -71,7 +79,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let accessToken = localStorage.getItem('access_token');
 
-    let currentmeal = "breakfast";
+    // let currentmeal = "breakfast";
     
     let response = await fetch(`https://gym-api-930w.onrender.com/api/diets/${data}/${currentmeal}/${accessToken}`, {
         method: 'GET',
@@ -217,7 +225,7 @@ document.getElementById("btn-date").addEventListener('click', async function(eve
         // Busca as informações da dieta para a data atual
         let accessToken = localStorage.getItem('access_token');
 
-        let currentmeal = "breakfast";
+        // let currentmeal = "breakfast";
         
         let response = await fetch(`https://gym-api-930w.onrender.com/api/diets/${date}/${currentmeal}/${accessToken}`, {
             method: 'GET',
