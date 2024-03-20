@@ -8,8 +8,8 @@ const firstH4Text = firstH4Element.textContent || firstH4Element.innerText;
 // Divide o texto pelo espaço e pega a primeira palavra
 const currentmeal = firstH4Text.split(' ')[0].toLowerCase();
 
-console.log(currentmeal); // Exibe a primeira palavra no console
 
+// Função para atualizar o token
 async function refreshToken() {
     let refreshToken = localStorage.getItem('refresh_token');
     try{
@@ -43,6 +43,8 @@ async function refreshToken() {
 
 }
 
+
+// Função para verificar e possivelmente atualizar o token
 async function checkAndRefreshToken() {
     let accessToken = localStorage.getItem('access_token');
     if (!accessToken) {
@@ -60,8 +62,8 @@ async function checkAndRefreshToken() {
     }
 }
 
-// Quando o usuário clicar no botão back ele será redirecionado para o diet.html com a div carousel-item active que contém o id "breakfastcontainer" ativa.
-//Antes da tela carregar, ele se comunica com o back end para retornar as informações do café da manhã. Do dia atual
+
+// Função para buscar as informações da dieta para a nova data selecionada
 document.addEventListener("DOMContentLoaded", async function () {
     await checkAndRefreshToken();
     // Configura a data atual como valor padrão do seletor de data
@@ -78,8 +80,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     let accessToken = localStorage.getItem('access_token');
-
-    // let currentmeal = "breakfast";
     
     let response = await fetch(`https://gym-api-930w.onrender.com/api/diets/${data}/${currentmeal}/${accessToken}`, {
         method: 'GET',
@@ -95,11 +95,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         updateFoodList(data);
 
     } else {
+
         console.error('Error:', response.status);
+
     }
+
 });
 
+
+// Função para chamar e tratar a validação de token
 document.addEventListener("DOMContentLoaded", async function () {
+    
     // Verifica e possivelmente atualiza o token antes de prosseguir
     await checkAndRefreshToken();
 
@@ -126,6 +132,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 });
 
+
+// Função para validar o token
 async function validateToken(token) {
     try {
         
@@ -149,6 +157,7 @@ async function validateToken(token) {
     }
 }
 
+// Função para obter a data selecionada
 async function fetchDietData() {
     let date = document.getElementById('date-selector').value; // Pega a data selecionada
     console.log(date);
@@ -156,6 +165,8 @@ async function fetchDietData() {
     return date;
 }
 
+
+// Função para atualizar a lista de alimentos
 async function updateFoodList(data) {    
     await checkAndRefreshToken();
     let foodListElement = document.getElementById('foodlist');
@@ -185,6 +196,7 @@ async function updateFoodList(data) {
         `;
     }
 }
+
 
 // Função para deletar o alimento
 async function deleteFood(foodId) {
@@ -216,6 +228,8 @@ async function deleteFood(foodId) {
     // Aqui, você pode atualizar a interface do usuário ou recarregar os itens após a exclusão
 }
 
+
+// Evento para buscar as informações da dieta para a nova data selecionada
 document.getElementById("btn-date").addEventListener('click', async function(event){
     event.preventDefault();
     // Se a data selecionada for diferente da data atual, busca as informações da dieta para a nova data
