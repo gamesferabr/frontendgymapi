@@ -24,7 +24,7 @@ async function refreshToken() {
         if (response.ok) {
             let data = await response.json();
             localStorage.setItem('access_token', data.access);
-            console.log('Token refreshed successfully.');} 
+           } 
             
             else {
                 console.error('Erro ao atualizar o token.');
@@ -160,7 +160,6 @@ async function validateToken(token) {
 // Função para obter a data selecionada
 async function fetchDietData() {
     let date = document.getElementById('date-selector').value; // Pega a data selecionada
-    console.log(date);
 
     return date;
 }
@@ -200,9 +199,6 @@ async function updateFoodList(data) {
 
 // Função para deletar o alimento
 async function deleteFood(foodId) {
-
-    // Implemente a lógica para deletar o alimento aqui
-    // Isso pode envolver enviar uma requisição DELETE para o seu backend
     console.log(`Deleting food with ID: ${foodId}`);
     let accessToken = localStorage.getItem('access_token');
     
@@ -216,30 +212,30 @@ async function deleteFood(foodId) {
     if (response.ok) {
         // Remove o item da lista na interface do usuário
         document.querySelector(`.list-group-item-${foodId}`).remove();
-        console.log('Food deleted successfully.');
+        alert('Food deleted successfully.');
 
         // Se a list-group-item estiver vazia, faz o update da lista
         if (document.getElementById('foodlist').innerHTML === '') {
             updateFoodList();
         }
+
     } else {
         console.error('Erro ao deletar o alimento:', response.status);
+        alert('Error deleting food. Please try again later.');
     }
-    // Aqui, você pode atualizar a interface do usuário ou recarregar os itens após a exclusão
 }
 
 
 // Evento para buscar as informações da dieta para a nova data selecionada
 document.getElementById("btn-date").addEventListener('click', async function(event){
     event.preventDefault();
+
     // Se a data selecionada for diferente da data atual, busca as informações da dieta para a nova data
     let date = document.getElementById('date-selector').value;
     
     if (date !== new Date().toISOString().slice(0, 10)) {
         // Busca as informações da dieta para a data atual
         let accessToken = localStorage.getItem('access_token');
-
-        // let currentmeal = "breakfast";
         
         let response = await fetch(`https://gym-api-930w.onrender.com/api/diets/${date}/${currentmeal}/${accessToken}`, {
             method: 'GET',
@@ -248,13 +244,12 @@ document.getElementById("btn-date").addEventListener('click', async function(eve
             }
         });
 
-        console.log(response);
-
         if (response.status === 200) {
             
             let data = await response.json();
 
             updateFoodList(data);
+
         }
         else {
             alert('No data found for this date. Please select another date.');
@@ -262,7 +257,9 @@ document.getElementById("btn-date").addEventListener('click', async function(eve
     }
 
     else{
+
         // Continua com o mesmo template e não busca as informações da dieta para a nova data
         alert('Data is already selected. Please select another date.');
+        
     }
 });
