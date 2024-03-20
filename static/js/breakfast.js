@@ -1,3 +1,7 @@
+// Pegar os valores do id do alimento h4
+const currentmeal = document.getElementById('currentmeal').textContent;
+console.log(currentmeal);
+
 async function refreshToken() {
     let refreshToken = localStorage.getItem('refresh_token');
     try{
